@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Withdraw</title>
+</head>
+<body>
+    <h1>Withdraw</h1>
+    <form action="">
+        <fieldset>
+            <legend>On-chain Withdrawal</legend>
+            <label for="coin">Select Coin</label>
+            <select id="coin" name="coin" required>
+                <option disabled value="" selected></option>
+                <option value="BTC" disabled>Bitcoin </option>
+                <option value="ETH" disabled>Ethereum</option>
+                <option value="USDT">Tether</option>
+            </select><br><br>
+
+            <label for="network">Chain type</label>
+            <select id="network" name="network" required>
+                <option disabled value="" selected></option>
+                <option value="TRC20">TRC20</option>
+                <option value="ERC20">ERC20</option>
+                <option value="BSC(BEP20)">BSC(BEP20)</option>
+            </select><br><br>
+
+            <label for="address">Withdraw To</label>
+            <input required id="address" type="text" size="50"><br>
+
+            <label for="whitelist">Add to whitelist</label>
+            <input type="checkbox" id="whitelist"><br><br>
+
+            <label for="amount">Withdrawable Amount</label>
+            <input required id="amount" type="number"><br><br>
+
+            <input type="radio" id="deduct-fee" name="fee" value="">
+            <label for="deduct-fee">Deduct Fee from Withdrawal Amount</label><br>
+
+            <input checked type="radio" id="equal-amount" name="fee" value="">
+            <label for="equal-amount">The received amount will equal your entered withdrawal amount</label><br>
+
+            <h2>Transaction Fee: --USDT </h2>
+            <h2>Amount Received: --USDT </h2>
+
+            <input type="submit" value="Confirm">
+        </fieldset>
+    </form>
+</body>
+</html>
