@@ -5,73 +5,44 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
     <title>Withdraw</title>
 </head>
 <body>
-    <h1>Withdraw</h1>
-    <form action="">
-        <fieldset>
-            <legend><h3>On-chain Withdrawal</h3></legend>
-            <label for="coin">Select Coin</label>
-            <select id="coin" name="coin" required>
-                <option disabled value="" selected></option>
-                <option value="BTC" disabled>Bitcoin </option>
-                <option value="ETH" disabled>Ethereum</option>
-                <option value="USDT">Tether</option>
-            </select><br><br>
+    <div class="withdrawal-form">
+        <h1 class="withdrawal-form__title">On-chain Withdrawal</h1>
+        <form action="#">
+            <div class="withdrawal-form__coin">
+                <label class="withdrawal-form__label" for="coin">Select coin</label>
+                <select class="withdrawal-form__select" id="coin">
+                    <option value="USDT">Tether USDT</option>
+                    <option value="BTC" disabled>Bitcoin</option>
+                    <option value="ETH" disabled>Ethereum</option>
+                </select>
 
-            <label for="network">Chain type</label>
-            <select id="network" name="network" required>
-                <option disabled value="" selected></option>
-                <option value="TRC20">TRC20</option>
-                <option value="ERC20">ERC20</option>
-                <option value="BSC(BEP20)">BSC(BEP20)</option>
-            </select><br><br>
+            </div>
 
-            <label for="address">Withdraw To</label>
-            <input required id="address" type="text" size="50"><br>
+            <div class="withdrawal-form__network">
+                <label class="withdrawal-form__label" for="network">Chain type</label>
+                <select class="withdrawal-form__select" id="network">
+                    <option value="TRC20">TRC20</option>
+                    <option value="ERC20">ERC20</option>
+                    <option value="BSC">BSC(BEP20)</option>
+                </select>
+            </div>
 
-            <label for="whitelist">Add to whitelist</label>
-            <input type="checkbox" id="whitelist"><br><br>
+            <div class="withdrawal-form__address">
+                <label class="withdrawal-form__label" for="address">Withdraw to</label>
+                <input type="text" class="withdrawal-form__input" id="address" placeholder="Wallet address">
+            </div>
 
-            <label for="amount">Withdrawable Amount</label>
-            <input required id="amount" type="number"><br><br>
+            <div class="withdrawal-form__amount">
+                <label class="withdrawal-form__label" for="amount">Withdrawable Amount</label>
+                <input type="number" class="withdrawal-form__input" id="amount" placeholder="Amount">
+            </div>
 
-            <input type="radio" id="deduct-fee" name="fee" value="">
-            <label for="deduct-fee">Deduct Fee from Withdrawal Amount</label><br>
-
-            <input checked type="radio" id="equal-amount" name="fee" value="">
-            <label for="equal-amount">The received amount will equal your entered withdrawal amount</label><br>
-
-            <h3>Transaction Fee: --USDT </h3>
-            <h3>Amount Received: --USDT </h3>
-
-            <input type="submit" value="Confirm">
-        </fieldset>
-    </form>
-    <h2>Recent Withdrawal Records</h2>
-    <table border="1" cellpadding="5" cellspacing="0" width="1000px">
-        <tr>
-            <th>Address</th>
-            <th>Coin</th>
-            <th>Qty</th>
-            <th>Status</th>
-            <th>Date & Time</th>
-        </tr>
-        <tr>
-            <td>TTAEk...rjr3B</td>
-            <td>Tether USDT</td>
-            <td>700</td>
-            <td>Completed |<a href="">Details</a></td>
-            <td>2024-05-10 22:03:49</td>
-        </tr>
-        <tr>
-            <td>TTAEk...rjr3B</td>
-            <td>Tether USDT</td>
-            <td>350</td>
-            <td>Completed |<a href="">Details</a></td>
-            <td>2024-05-25 19:03:29</td>
-        </tr>
-    </table>
+            <button type="submit" class="withdrawal-form__submit">Confirm</button>
+        </form>
+    </div>
 </body>
 </html>
